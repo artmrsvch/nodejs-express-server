@@ -1,0 +1,11 @@
+{
+    "users": [
+        { "email": "artmrsvch@gmail.com", "password": "123456" },
+        { "email": "artmrsvch@gmail.com", "password": "tttttt" },
+        { "email": "turik@gmail.com", "password": "123" },
+        { "email": "risolvik@gmail.com", "password": "mama" },
+        { "email": "gitler@gmail.com", "password": "terrorist" },
+        { "email": "gitler@gmail.com", "password": "terrorist" },
+        { "email": "gitlerSuka@gmail.com", "password": "ubunty" }
+    ]
+}
