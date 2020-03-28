@@ -5,14 +5,13 @@ module.exports = {
     getIndex: (req, res) => {
         res.render("index", {
             skills: skills || [],
-            products: products || []
+            products: products || [],
+            msgsemail: req.flash("success")
         });
     },
     message: async (req, res) => {
         await db.addMessage(req.body);
-        res.render("index", {
-            skills: skills || [],
-            products: products || []
-        });
+        req.flash("success", "Сообщение успешно отправлено");
+        res.redirect("/");
     }
 };
