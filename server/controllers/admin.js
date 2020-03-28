@@ -5,8 +5,8 @@ module.exports = {
         res.render("admin");
     },
     addProduct: async (req, res) => {
-        console.log(req.body);
-        res.render("admin");
+        await db.addProduct(req);
+        res.redirect("../");
     },
     setSkills: async (req, res) => {
         await db.setSkills(req.body);
