@@ -3,18 +3,26 @@ const db = require("../model/dbExtract");
 module.exports = {
     getAdmin: (req, res) => {
         res.render("admin", {
-            msgskill: req.flash("successSkill"),
-            msgfile: req.flash("successFile")
+            msgskill: req.flash("skill"),
+            msgfile: req.flash("file")
         });
     },
     addProduct: async (req, res) => {
-        await db.addProduct(req);
-        req.flash("successFile", "Продукт успешно добавлен");
+        try {
+            await db.addProduct(req);
+            req.flash("file", "Продукт успешно добавлен");
+        } catch (message) {
+            req.flash("file", message);
+        }
         res.redirect(".");
     },
     setSkills: async (req, res) => {
-        await db.setSkills(req.body);
-        req.flash("successSkill", "Скиллы успешно обновленны");
+        try {
+            await db.setSkills(req.body);
+            req.flash("skill", "Скиллы успешно обновленны");
+        } catch (message) {
+            req.flash("skill", message);
+        }
         res.redirect(".");
     }
 };

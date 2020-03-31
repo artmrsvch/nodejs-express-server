@@ -4,6 +4,7 @@ const path = require("path");
 const Events = require("events");
 const formidable = require("formidable");
 const writeFile = util.promisify(fs.writeFile);
+const { isEmpty } = require("./validateFields");
 
 const emiter = new Events();
 
@@ -39,6 +40,7 @@ const getFiles = req => {
 
         form.parse(req, (err, fields, files) => {
             err && reject(err);
+            if (isEmpty(fields)) reject("Все поля должны быть заполнены");
             const fileName = path.join(upload, files.photo.name);
 
             fs.rename(files.photo.path, fileName, err => {
@@ -55,23 +57,30 @@ module.exports = {
     getDB: () => require("./db/db.json"),
     addUsers: data => {
         return new Promise((resolve, reject) => {
+            if (isEmpty(data)) reject("Все поля должны быть заполнены");
             emiter.emit("apply", resolve, reject, applyData("users", data));
         });
     },
     addMessage: data => {
         return new Promise((resolve, reject) => {
+            if (isEmpty(data)) reject("Все поля должны быть заполнены");
             emiter.emit("apply", resolve, reject, applyData("messages", data));
         });
     },
     setSkills: data => {
         return new Promise((resolve, reject) => {
+            if (isEmpty(data)) reject("Все поля должны быть заполнены");
             emiter.emit("apply", resolve, reject, replaceData(data));
         });
     },
     addProduct: req => {
         return new Promise(async (resolve, reject) => {
-            const data = await getFiles(req);
-            emiter.emit("apply", resolve, reject, applyData("products", data));
+            try {
+                const data = await getFiles(req);
+                emiter.emit("apply", resolve, reject, applyData("products", data));
+            } catch (message) {
+                reject(message);
+            }
         });
     }
 };

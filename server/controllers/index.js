@@ -6,12 +6,16 @@ module.exports = {
         res.render("index", {
             skills: skills || [],
             products: products || [],
-            msgsemail: req.flash("success")
+            msgsemail: req.flash("message")
         });
     },
     message: async (req, res) => {
-        await db.addMessage(req.body);
-        req.flash("success", "Сообщение успешно отправлено");
+        try {
+            await db.addMessage(req.body);
+            req.flash("message", "Сообщение успешно отправлено");
+        } catch (message) {
+            req.flash("message", message);
+        }
         res.redirect("/");
     }
 };
