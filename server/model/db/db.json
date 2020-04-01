@@ -1,0 +1,48 @@
+{
+    "skills": [
+        { "number": "4", "text": "Возраст начала занятий на скрипке" },
+        { "number": "4", "text": "Концертов отыграл" },
+        { "number": "", "text": "Максимальное число городов в туре" },
+        { "number": "", "text": "Лет на сцене в качестве скрипача" }
+    ],
+    "products": [
+        { "src": "./assets/img/products/Work1.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work2.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work3.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work4.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work5.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work6.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work7.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work8.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Work9.jpg", "name": "Вино вдохновение", "price": 600 },
+        { "src": "./assets/img/products/Lighthouse.jpg", "name": "говно", "price": "2" },
+        { "src": "./assets/img/products/Penguins.jpg", "name": "Penguine", "price": "999" }
+    ],
+    "messages": [
+        {
+            "name": "Vitalik Zver Zhestokiy",
+            "email": "gitler@gmail.com",
+            "message": "Ebat ya zver"
+        },
+        {
+            "name": "Valentina Harchok",
+            "email": "harchok@bichok.res",
+            "message": "хап ттьфу на те в *бало "
+        },
+        {
+            "name": "Контент-менеджер для длительного сотрудничества интернет-магазин",
+            "email": "utrin@gmail.com",
+            "message": "ubunta"
+        },
+        { "name": "Riccord", "email": "opilka@pipilka.com", "message": "llo" },
+        { "name": "Artem", "email": "gcsant@mail.ru", "message": "" },
+        { "name": "Artem", "email": "gcsant@mail.ru", "message": "" }
+    ],
+    "users": [
+        { "email": "risolvik@gmail.com", "password": "кукуепта" },
+        { "email": "risolvidk@gmail.com", "password": "wweee" },
+        { "email": "pchelki@osa.co", "password": "putin" },
+        { "email": "turik@gmail.com", "password": "iiii" },
+        { "email": "turik@gmail.com", "password": "iiii" }
+    ]
+}
