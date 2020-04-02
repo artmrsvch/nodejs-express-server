@@ -1,12 +1,15 @@
 const db = require("../model/dbExtract");
 
 module.exports = {
-    getLogin: (req, res) => {
-        res.render("login");
+    getLogin: async (ctx, next) => {
+        await ctx.render("pages/login");
     },
-    setLogin: async (req, res) => {
-        console.log(req.body);
-        await db.addUsers(req.body);
-        res.redirect("admin");
+    setLogin: async (ctx, next) => {
+        try {
+            await db.addUsers(ctx.request.body);
+            ctx.redirect("admin");
+        } catch (message) {
+            ctx.redirect("login");
+        }
     }
 };
